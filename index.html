@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coaching Class Registration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <form id="registrationForm">
+      <h2>Register for Coaching Classes</h2>
+      <label for="center">Choose Center</label>
+      <select id="center" required>
+        <option value="" disabled selected>Select Center</option>
+        <option value="Center1">Center 1</option>
+        <option value="Center2">Center 2</option>
+      </select>
+
+      <label for="childName">Child Name</label>
+      <input type="text" id="childName" required />
+
+      <label for="gender">Gender</label>
+      <input type="radio" name="gender" value="M" required /> Male
+      <input type="radio" name="gender" value="F" required /> Female
+
+      <label for="parentName">Parent Name</label>
+      <input type="text" id="parentName" required />
+
+      <label for="address">Address</label>
+      <textarea id="address" required></textarea>
+
+      <label for="age">Age of Student</label>
+      <input type="number" id="age" min="4" max="18" required />
+
+      <label for="mobile">Mobile No.</label>
+      <input type="tel" id="mobile" required pattern="^[0-9]{10}$" />
+
+      <button type="button" onclick="sendOTP()">Send OTP</button>
+
+      <div id="otp-section" style="display:none;">
+        <label for="otp">Enter OTP</label>
+        <input type="text" id="otp" required />
+        <button type="button" onclick="verifyOTP()">Verify OTP</button>
+      </div>
+      
+      <button type="submit" disabled id="submitButton">Submit</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
