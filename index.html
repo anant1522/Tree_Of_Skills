@@ -1,53 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coaching Class Registration</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching Class Registration</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="form-container">
-    <form id="registrationForm">
-      <h2>Register for Coaching Classes</h2>
-      <label for="center">Choose Center</label>
-      <select id="center" required>
-        <option value="" disabled selected>Select Center</option>
-        <option value="Center1">Center 1</option>
-        <option value="Center2">Center 2</option>
-      </select>
 
-      <label for="childName">Child Name</label>
-      <input type="text" id="childName" required />
-
-      <label for="gender">Gender</label>
-      <input type="radio" name="gender" value="M" required /> Male
-      <input type="radio" name="gender" value="F" required /> Female
-
-      <label for="parentName">Parent Name</label>
-      <input type="text" id="parentName" required />
-
-      <label for="address">Address</label>
-      <textarea id="address" required></textarea>
-
-      <label for="age">Age of Student</label>
-      <input type="number" id="age" min="4" max="18" required />
-
-      <label for="mobile">Mobile No.</label>
-      <input type="tel" id="mobile" required pattern="^[0-9]{10}$" />
-
-      <button type="button" onclick="sendOTP()">Send OTP</button>
-
-      <div id="otp-section" style="display:none;">
-        <label for="otp">Enter OTP</label>
-        <input type="text" id="otp" required />
-        <button type="button" onclick="verifyOTP()">Verify OTP</button>
-      </div>
+<div class="form-container">
+    <h2>Registration Form</h2>
+    <form id="registration-form">
+        
       
-      <button type="submit" disabled id="submitButton">Submit</button>
-    </form>
-  </div>
+        <div class="form-group">
+            <label for="center">Choose Center:</label>
+            <select id="center" name="center" required>
+                <option value="">Select Center</option>
+                <option value="center1">Center 1</option>
+                <option value="center2">Center 2</option>
+            </select>
+        </div>
 
-  <script src="script.js"></script>
+      
+        <div class="form-group">
+            <label for="childName">Name of Student:</label>
+            <input type="text" id="childName" name="childName" placeholder="Enter student's name" required>
+        </div>
+
+      
+        <div class="form-group gender-group">
+          <label>Gender:</label>
+          <div class="gender-options">
+              <input type="radio" id="male" name="gender" value="M" required>
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender" value="F">
+              <label for="female">Female</label>
+          </div>
+      </div>
+
+      
+        <div class="form-group">
+            <label for="parentName">Name of Parent:</label>
+            <input type="text" id="parentName" name="parentName" placeholder="Enter parent's name" required>
+        </div>
+
+      
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" placeholder="Enter address" required></textarea>
+        </div>
+
+      
+        <div class="form-group">
+            <label for="age">Age of Student:</label>
+            <input type="number" id="age" name="age" placeholder="Enter age" required min="3">
+        </div>
+
+      
+        <div class="form-group">
+            <label for="mobile">Mobile No.:</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required pattern="[0-9]{10}">
+        </div>
+
+       
+        <div class="form-group">
+            <label for="otp">OTP:</label>
+            <input type="text" id="otp" name="otp" placeholder="Enter OTP" required maxlength="6">
+            <button type="button" onclick="sendOTP()">Send OTP</button>
+        </div>
+
+        <div class="form-group terms-group">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I Accept the terms and conditions</label>
+        </div>
+
+
+
+
+        
+        <button type="submit">Register</button>
+
+    </form>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

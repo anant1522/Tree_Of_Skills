@@ -1,31 +1,14 @@
 function sendOTP() {
-    const mobile = document.getElementById('mobile').value;
-    fetch('/send-otp', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ mobile })
-    }).then(response => {
-      if (response.ok) {
-        document.getElementById('otp-section').style.display = 'block';
-      }
-    });
+  const mobileNumber = document.getElementById('mobile').value;
+
+  if (mobileNumber && mobileNumber.length === 10) {
+      alert('OTP has been sent to your mobile number.');
+  } else {
+      alert('Please enter a valid mobile number.');
   }
-  
-  function verifyOTP() {
-    const mobile = document.getElementById('mobile').value;
-    const otp = document.getElementById('otp').value;
-    fetch('/verify-otp', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ mobile, otp })
-    }).then(response => response.json())
-      .then(data => {
-        if (data.verified) {
-          document.getElementById('submitButton').disabled = false;
-          alert('OTP verified! You may now submit the form.');
-        } else {
-          alert('Invalid OTP');
-        }
-      });
-  }
-  
+}
+
+document.getElementById('registration-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  alert('Registration successful!');
+});
