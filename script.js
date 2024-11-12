@@ -1,14 +1,21 @@
-function sendOTP() {
-  const mobileNumber = document.getElementById('mobile').value;
 
-  if (mobileNumber && mobileNumber.length === 10) {
-      alert('OTP has been sent to your mobile number.');
-  } else {
-      alert('Please enter a valid mobile number.');
-  }
+function sendOtp() {
+  const mobileNumber = document.getElementById("mobile").value;
+
+
+  console.log("Sending OTP to:", mobileNumber);
+
+
+  document.querySelector(".otp-input-group").style.display = "flex";
 }
 
-document.getElementById('registration-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  alert('Registration successful!');
-});
+
+function verifyOtp() {
+  const otp = document.getElementById("otp").value;
+
+
+  console.log("Verifying OTP:", otp);
+
+
+  alert("OTP verified successfully!");
+}
