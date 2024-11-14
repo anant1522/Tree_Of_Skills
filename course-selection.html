@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Selection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Course Selection</h2>
+    <div class="form-group">
+        <label>Age Groups</label>
+        <div class="age-group-options">
+            <button onclick="selectAgeGroup('3-4')">3-4</button>
+            <button onclick="selectAgeGroup('5-6')">5-6</button>
+            <button onclick="selectAgeGroup('7-10')">7-10</button>
+            <button onclick="selectAgeGroup('11+')">11+</button>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Gender</label>
+        <div class="gender-options">
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Available Courses</label>
+        <div class="course-options">
+            <button onclick="selectCourse('Kathak')">Kathak</button>
+            <button onclick="selectCourse('Western Dance and Fitness')">Western Dance and Fitness</button>
+            <button onclick="selectCourse('Table Tennis')">Table Tennis</button>
+            <button onclick="selectCourse('Chess')">Chess</button>
+            <button onclick="selectCourse('Piano')">Piano</button>
+        </div>
+    </div>
+    <div id="course-details" class="course-details" style="display: none;">
+        <h3 id="course-title"></h3>
+        <div class="level-section">
+            <h4>Beginner Courses</h4>
+            <div class="stage">
+                <h5>Stage 1</h5>
+                <p>Content</p>
+                <p>Test</p>
+                <p>Excursion / Stage Performance</p>
+                <p>Expected Result</p>
+            </div>
+            <div class="stage">
+                <h5>Stage 2</h5>
+                <p>Content</p>
+                <p>Test</p>
+                <p>Excursion / Stage Performance</p>
+                <p>Expected Result</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
